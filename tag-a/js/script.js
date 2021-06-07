@@ -1,4 +1,8 @@
 
+//global variables
+var numberOperator = 0; //to store the first number plus the operator
+var operator = '';
+var final= 0;
 function addValue(num){
     prevNum = document.getElementById('calc-input').value;
     if(prevNum === '0'){       
@@ -24,13 +28,15 @@ function clearPrevNum(){
 
 function clearAll(){
     document.getElementById('calc-input').value = '';
-    
+    numberOperator = 0; //to store the first number plus the operator
+    operator = '';
+    final= 0;
 }
 
  
- var numberOperator; //to store the first number plus the operator
- function addOperator(operator){
-     numberOperator = document.getElementById('calc-input').value += operator;
+
+ function addOperator(op){
+     numberOperator = document.getElementById('calc-input').value += op;
      console.log(numberOperator);
      document.getElementById('calc-input').value = '';
      return numberOperator;
@@ -48,24 +54,24 @@ function result(){
 
      switch(operator){
          case '+':
-             result = intNum + secondValue;
-             document.getElementById('calc-input').value = result;
-             console.log(result);
+             final = intNum + secondValue;
+             document.getElementById('calc-input').value = final;
+             console.log(final);
              break;
          case '-':
-             result = intNum - secondValue;
-             document.getElementById('calc-input').value = result;
-             console.log(result);
+             final = intNum - secondValue;
+             document.getElementById('calc-input').value = final;
+             console.log(final);
              break;
          case '*':
-             result = intNum * secondValue;
-             document.getElementById('calc-input').value = result;
-             console.log(result); 
+             final = intNum * secondValue;
+             document.getElementById('calc-input').value = final;
+             console.log(final); 
              break;
          case '/':
-             result = intNum / secondValue;
-             document.getElementById('calc-input').value = result;
-             console.log(result);   
+             final = intNum / secondValue;
+             document.getElementById('calc-input').value = final;
+             console.log(final);   
              break;
      }
  }
