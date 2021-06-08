@@ -60,8 +60,14 @@ function result(){
              document.getElementById('calc-input').value = final;
              break;
          case '/':
-             final = intNum / secondValue;
-             document.getElementById('calc-input').value = final;
+             if(secondValue !== 0){
+                 final = intNum / secondValue;
+                 document.getElementById('calc-input').value = final;
+             }
+             else if(secondValue === 0){
+                 alert('cannot be divided by 0');
+                document.getElementById('calc-input').value = '';
+             }
              break;
      }
  }
