@@ -13,55 +13,97 @@
         <a href="./page-a.html">Calculator</a>
     </header>
     <div class="container">
-        <h1 class="text-center mt-2">TODO</h1>
+        
         <div class="row mt-3">
             <div class="col-md-12">
-
                 <div class="card card-white">
-
+                    <h1 class="card-title text-center mt-2">Todo List</h1>
                     <div class="card-body">
-                        <input type="text" class="form-control add-task" placeholder="New Task...">
-
+                        <form>
+                            <input id="add-task" type="text" class="form-control md-2" placeholder="Add title" onkeyup="add()">
+                            <textarea class="form-control mt-2"  rows="3" placeholder="Add description..."></textarea>
+                            <div>
+                              <button type="button" class="btn btn-success mt-2">Save</button>  
+                            </div>
+                            
+                        </form>
+                        
                         <div class="todo-list">
-
-                            <div class="todo-item">
-                                <span>Improve Javascript understanding</span>
-
-                                <button type="button" class="float-right close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-
+                            <div class="todo-item row">
+                                <div class="col-6">
+                                    <div>title 1</div>
+                                    <div>Improve Advanced Javascript</div> 
+                                </div>
+                                <div class="col offset-2">
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">Edit</button>
+                                    <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                     
+                                 </div>
                             </div>
 
-                            <div class="todo-item">
-                                <span>Learn MongoDB, Express and Node</span>
-
-                                <button type="button" class="float-right close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-
+                            <div class="todo-item row">
+                                <div class="col-6">
+                                   <div>title 2</div>
+                                   <div>Learn MongoDB, Express and Node</div> 
+                                </div>
+                                
+                                <div class="col offset-2">
+                                    <button type="button" class="btn btn-info">Edit</button>
+                                    <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                     
+                                 </div>
                             </div>
-
-                            <div class="todo-item">
-                                <span>Learn React/Redux</span>
-
-                                <button type="button" class="float-right close" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-
+                            <div class="todo-item row">
+                                <div class="col-6">
+                                    <div>title 3</div>
+                                    <div>Learn React/Redux</div>
+                                </div>
+                                <div class="col offset-2">
+                                   <button type="button" class="btn btn-info">Edit</button> 
+                                   <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                   
+                                </div>
+                                
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
+        <!--Modal-->
+    
+        <div id="modal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modify or delete</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Title</p>
+                        <p>Description</p>
+            
+                    </div>
+            
+                    <div class="modal-footer">
+            
+                        <button type="button" class="btn btn-primary">Save changes</button>
+             
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+                    </div>
+          
+                </div>
+        
+            </div>
+      
+        </div>
+ 
     </div>
+    
+    <script src="../js/script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

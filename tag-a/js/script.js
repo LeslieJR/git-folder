@@ -1,4 +1,4 @@
-
+//Calculator
 //global variables
 let numberOperator = 0; //to store the first number plus the operator
 let operator = ''; //to store the operator
@@ -70,4 +70,12 @@ function result(){
              }
              break;
      }
+ }
+
+ //TODO
+ function add(){
+     let text = document.getElementById('add-task').value;
+     
+         console.log(text);
+     
  }
