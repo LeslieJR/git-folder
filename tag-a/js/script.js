@@ -1,10 +1,10 @@
 
 //global variables
-var numberOperator = 0; //to store the first number plus the operator
-var operator = ''; //to store the operator
-var final= 0;
+let numberOperator = 0; //to store the first number plus the operator
+let operator = ''; //to store the operator
+let final= 0;
 function addValue(num){
-    prevNum = document.getElementById('calc-input').value;
+    let prevNum = document.getElementById('calc-input').value;
     if(prevNum === '0'){        
         document.getElementById('calc-input').value = num;
     }else if(prevNum !== '0'){
@@ -14,11 +14,11 @@ function addValue(num){
 }
 
 function clearPrevNum(){
-    inputNum = document.getElementById('calc-input').value;
-    arrayNum = Array.from(inputNum);
+    let inputNum = document.getElementById('calc-input').value;
+    let arrayNum = Array.from(inputNum);
     if(arrayNum.length !== 0){
         arrayNum.pop();
-        newInput = arrayNum.join('');
+        let newInput = arrayNum.join('');
         document.getElementById('calc-input').value = newInput;
        
     }
@@ -41,22 +41,22 @@ function clearAll(){
  }
  
 function result(){
-     secondValue =  parseInt(document.getElementById('calc-input').value);    
-     arrayNum = Array.from(numberOperator);
+     let secondValue =  parseInt(document.getElementById('calc-input').value);    
+     let arrayNum = Array.from(numberOperator);
      operator = arrayNum.pop();
-     intNum = parseInt(arrayNum.join(''));
-
+     let intNum = parseInt(arrayNum.join(''));
+     let final;
      switch(operator){
          case '+':
-             final = intNum + secondValue;
+              final = intNum + secondValue;
              document.getElementById('calc-input').value = final;
              break;
          case '-':
-             final = intNum - secondValue;
+              final = intNum - secondValue;
              document.getElementById('calc-input').value = final;
              break;
          case '*':
-             final = intNum * secondValue;
+              final = intNum * secondValue;
              document.getElementById('calc-input').value = final;
              break;
          case '/':
@@ -66,7 +66,7 @@ function result(){
              }
              else if(secondValue === 0){
                  alert('cannot be divided by 0');
-                document.getElementById('calc-input').value = '';
+                 document.getElementById('calc-input').value = '';
              }
              break;
      }
