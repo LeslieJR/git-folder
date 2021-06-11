@@ -72,10 +72,3 @@ function result(){
      }
  }
 
- //TODO
- function add(){
-     let text = document.getElementById('add-task').value;
-     
-         console.log(text);
-     
- }

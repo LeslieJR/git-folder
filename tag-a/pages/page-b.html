@@ -20,10 +20,10 @@
                     <h1 class="card-title text-center mt-2">Todo List</h1>
                     <div class="card-body">
                         <form>
-                            <input id="add-task" type="text" class="form-control md-2" placeholder="Add title" onkeyup="add()">
-                            <textarea class="form-control mt-2"  rows="3" placeholder="Add description..."></textarea>
+                            <input id="add-title" type="text" class="form-control md-2" placeholder="Add title" value="">
+                            <textarea id="add-description" class="form-control mt-2"  rows="3" placeholder="Add description..."></textarea>
                             <div>
-                              <button type="button" class="btn btn-success mt-2">Save</button>  
+                              <button type="button" class="btn btn-success mt-2" onclick="createTask()">Save</button>  
                             </div>
                             
                         </form>
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col offset-2">
                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">Edit</button>
-                                    <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                    <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
                                      
                                  </div>
                             </div>
@@ -48,8 +48,8 @@
                                 </div>
                                 
                                 <div class="col offset-2">
-                                    <button type="button" class="btn btn-info">Edit</button>
-                                    <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-target="#modal">Edit</button>
+                                    <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
                                      
                                  </div>
                             </div>
@@ -59,8 +59,8 @@
                                     <div>Learn React/Redux</div>
                                 </div>
                                 <div class="col offset-2">
-                                   <button type="button" class="btn btn-info">Edit</button> 
-                                   <button type="button" class="btn btn-danger" aria-label="Close">Remove</button>
+                                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">Edit</button> 
+                                   <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
                                    
                                 </div>
                                 
@@ -84,26 +84,35 @@
                     <div class="modal-body">
                         <p>Title</p>
                         <p>Description</p>
-            
                     </div>
-            
                     <div class="modal-footer">
-            
-                        <button type="button" class="btn btn-primary">Save changes</button>
-             
+                        <button type="button" class="btn btn-primary" onclick="editTask()">Save</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            
                     </div>
-          
                 </div>
-        
             </div>
       
         </div>
+        <!--Modal - Alert-->
+        <div id="alerta" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Error</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Title and Description are required</p>
+                </div>
+              </div>
+            </div>
+          </div>
  
     </div>
     
-    <script src="../js/script.js"></script>
+    <script src="../js//service.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
