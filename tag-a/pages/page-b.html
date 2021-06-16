@@ -28,43 +28,9 @@
                             
                         </form>
                         
-                        <div class="todo-list">
-                            <div class="todo-item row">
-                                <div class="col-6">
-                                    <div>title 1</div>
-                                    <div>Improve Advanced Javascript</div> 
-                                </div>
-                                <div class="col offset-2">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">Edit</button>
-                                    <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
-                                     
-                                 </div>
-                            </div>
+                        <div id="task-container" class="todo-list">
+                            
 
-                            <div class="todo-item row">
-                                <div class="col-6">
-                                   <div>title 2</div>
-                                   <div>Learn MongoDB, Express and Node</div> 
-                                </div>
-                                
-                                <div class="col offset-2">
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal" data-target="#modal">Edit</button>
-                                    <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
-                                     
-                                 </div>
-                            </div>
-                            <div class="todo-item row">
-                                <div class="col-6">
-                                    <div>title 3</div>
-                                    <div>Learn React/Redux</div>
-                                </div>
-                                <div class="col offset-2">
-                                   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal">Edit</button> 
-                                   <button type="button" class="btn btn-danger" aria-label="Close" onclick="deleteTask()">Remove</button>
-                                   
-                                </div>
-                                
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,22 +39,23 @@
         <!--Modal-->
     
         <div id="modal" class="modal fade" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modify or delete</h5>
+                        <h5 class="modal-title">Modify the task</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Title</p>
-                        <p>Description</p>
+                        <form>
+                            <input id="new-title" type="text" class="form-control md-2" placeholder="Add title" value="">
+                            <textarea id="new-description" class="form-control mt-2"  rows="3" placeholder="Add description..."></textarea>
+                            <button type="button" class="btn btn-info mt-2" data-dismiss="modal" onclick="updateValues()">Save changes</button>  
+                            <input type="text" value="" class="d-none" id="edit-id">
+                        </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="editTask()">Save</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+                    
                 </div>
             </div>
       
