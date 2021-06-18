@@ -17,10 +17,12 @@ function getTaskTemplate(task){
 
  function printTasks(){
      const allTasks= getAllTasks();
+     console.log(allTasks)
      let taskContainer = document.getElementById('task-container');
      
      taskContainer.innerHTML = "";
      for(let i=0; i<allTasks.length; i++){
+         console.log(allTasks[i])
         taskContainer.innerHTML += getTaskTemplate(allTasks[i]);
      }   
  }
