@@ -26,7 +26,7 @@ function getTaskTemplate(task){
  }
 
 function removeTask(id){
-    //console.log('id: '+id)
+    console.log('id: '+id)
     deleteTask(id);
 }
 

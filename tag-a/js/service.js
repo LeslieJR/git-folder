@@ -30,7 +30,6 @@
 
 
  function getAllTasks(){
-    //get all the tasks
     return taskStore;
 }
 
@@ -47,6 +46,7 @@
 }
 
  function editTask(task){
+    
     //let editTaskStore = [...taskStore]
     
     // editTaskStore[id].title = editTitle;
